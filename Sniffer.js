@@ -3,7 +3,6 @@ import { CSVLink } from 'react-csv';
 import Swal from 'sweetalert2';
 import Buscar from './search';
 
-
 const Table = () => {
 
 	const [csvData, setCsvData] = useState([]);
@@ -20,6 +19,9 @@ const Table = () => {
 	const year = today.getFullYear();
 	const month = (today.getMonth() + 1).toString().padStart(2, '0');
 	const day = today.getDate().toString().padStart(2, '0');
+
+	
+
 
 	const formattedDate = `${year}-${month}-${day}`;
 	useEffect(() => {
@@ -134,7 +136,7 @@ const Table = () => {
 					<div className="order">
 						<div className="head">
 							<h3>Datos</h3>
-						
+
 						</div>
 						<div style={{ height: '400px', overflow: 'scroll' }}>
 							<table id="my-table">
@@ -146,6 +148,7 @@ const Table = () => {
 										<th>fecha</th>
 										<th>hora</th>
 										<th>Sistema operativo</th>
+										<th>Protocolo</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -157,6 +160,7 @@ const Table = () => {
 											<td>{data.fecha}</td>
 											<td>{data.hora}</td>
 											<td>{data.os}</td>
+											<td>{data.protocol}</td>
 										</tr>
 									))}
 								</tbody>
@@ -164,6 +168,9 @@ const Table = () => {
 
 						</div>
 					</div>
+
+
+					
 
 				</div>
 			</main>
